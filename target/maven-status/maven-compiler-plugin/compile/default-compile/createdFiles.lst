@@ -1,0 +1,13 @@
+com/rso40/healthservice/controller/HealthController.class
+com/rso40/healthservice/model/Health.class
+com/rso40/healthservice/model/Ping$PingBuilder.class
+com/rso40/healthservice/model/Details.class
+com/rso40/healthservice/service/HealthService.class
+com/rso40/healthservice/model/Components.class
+com/rso40/healthservice/HealthServiceApplication.class
+com/rso40/healthservice/model/Health$HealthBuilder.class
+com/rso40/healthservice/model/Details$DetailsBuilder.class
+com/rso40/healthservice/model/Mongo$MongoBuilder.class
+com/rso40/healthservice/model/Components$ComponentsBuilder.class
+com/rso40/healthservice/model/Ping.class
+com/rso40/healthservice/model/Mongo.class

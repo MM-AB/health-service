@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.rso40.healthservice.AdminServiceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.177 s - in com.rso40.healthservice.AdminServiceApplicationTests
