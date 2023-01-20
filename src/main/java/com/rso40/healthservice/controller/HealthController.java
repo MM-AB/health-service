@@ -1,19 +1,27 @@
 package com.rso40.healthservice.controller;
 
 import com.rso40.healthservice.model.*;
+import com.rso40.healthservice.service.HealthService;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.security.Timestamp;
+import java.util.List;
+
 
 @RestController
 @RequestMapping("health")
 @RequiredArgsConstructor
 public class HealthController {
+
+    @Autowired
+    private HealthService healthService;
 
     public static final String HEALTH_SERVICE="healthService";
     private static final String PATH_URL_ADMIN = "http://localhost:8080"; //http://localhost:8080 //http://20.120.124.86/admin
@@ -30,6 +38,7 @@ public class HealthController {
         Health orderResponse = getOrderHealth();
         Health productResponse = getProductHealth();
 
+        saveData(adminResponse, userResponse, orderResponse, productResponse);
 
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("index");
@@ -56,6 +65,50 @@ public class HealthController {
 
         return modelAndView;
     }
+
+    @PostMapping("/post")
+    public void saveData(Health adminResponse, Health userResponse, Health orderResponse, Health productResponse) {
+
+        System.out.println("I am here");
+
+
+        HealthRepo healthAdmin = new HealthRepo();
+        healthAdmin.setHealth(adminResponse);
+        healthAdmin.setTimestamp(System.currentTimeMillis());
+        healthAdmin.setServiceName("Admin MS");
+        healthService.saveHealth(healthAdmin);
+
+        HealthRepo healthUser = new HealthRepo();
+        healthUser.setHealth(userResponse);
+        healthUser.setTimestamp(System.currentTimeMillis());
+        healthUser.setServiceName("User MS");
+        healthService.saveHealth(healthUser);
+
+        HealthRepo healthOrder = new HealthRepo();
+        healthOrder.setHealth(orderResponse);
+        healthOrder.setTimestamp(System.currentTimeMillis());
+        healthOrder.setServiceName("Order MS");
+        healthService.saveHealth(healthOrder);
+
+        HealthRepo healthProduct = new HealthRepo();
+        healthProduct.setHealth(productResponse);
+        healthProduct.setTimestamp(System.currentTimeMillis());
+        healthProduct.setServiceName("Product MS");
+        healthService.saveHealth(healthProduct);
+
+
+    }
+
+    @GetMapping("/db")
+    @ResponseStatus(HttpStatus.OK)
+    public List<HealthRepo> getDbLogs() {
+        List<HealthRepo> healthRepos = healthService.getAllHealthLogs();
+        System.out.println(healthRepos);
+        return healthRepos;
+    }
+
+
+
 
     @GetMapping("/admin")
     @CircuitBreaker(name = "healthService",fallbackMethod = "getMsDown")
