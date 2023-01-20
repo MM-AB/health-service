@@ -8,6 +8,7 @@ com/rso40/healthservice/HealthServiceApplication.class
 com/rso40/healthservice/model/Health$HealthBuilder.class
 com/rso40/healthservice/model/Details$DetailsBuilder.class
 com/rso40/healthservice/model/Mongo$MongoBuilder.class
+com/rso40/healthservice/configuration/CircuitBreakerConfiguration.class
 com/rso40/healthservice/model/Components$ComponentsBuilder.class
 com/rso40/healthservice/model/Ping.class
 com/rso40/healthservice/model/Mongo.class

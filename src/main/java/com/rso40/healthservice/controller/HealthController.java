@@ -58,46 +58,68 @@ public class HealthController {
     }
 
     @GetMapping("/admin")
-    @CircuitBreaker(name=HEALTH_SERVICE,fallbackMethod="getMsDown")
+    @CircuitBreaker(name = "healthService",fallbackMethod = "getMsDown")
     public Health getAdminHealth() {
 
-        ResponseEntity<Health> adminHealth = new RestTemplate().getForEntity(PATH_URL_ADMIN+"/actuator/health", Health.class);
-        Health adminResponse = adminHealth.getBody();
+        try{
+            ResponseEntity<Health> adminHealth = new RestTemplate().getForEntity(PATH_URL_ADMIN+"/actuator/health", Health.class);
+            Health adminResponse = adminHealth.getBody();
 
-        return adminResponse;
+            return adminResponse;
+        }
+        catch (Exception e){
+            Health adminResponse = getMsDown();
+            return adminResponse;
+        }
+
     }
 
     @GetMapping("/user")
-    @CircuitBreaker(name=HEALTH_SERVICE,fallbackMethod="getMsDown")
+    @CircuitBreaker(name = "healthService",fallbackMethod = "getMsDown")
     public Health getUserHealth() {
 
-        ResponseEntity<Health> userHealth = new RestTemplate().getForEntity(PATH_URL_USER+"/actuator/health", Health.class);
-        Health userResponse = userHealth.getBody();
-
-        return userResponse;
+        try{
+            ResponseEntity<Health> userHealth = new RestTemplate().getForEntity(PATH_URL_USER+"/actuator/health", Health.class);
+            Health userResponse = userHealth.getBody();
+            return userResponse;
+        }
+        catch (Exception e){
+            Health userResponse = getMsDown();
+            return userResponse;
+        }
     }
 
     @GetMapping("/order")
-    @CircuitBreaker(name=HEALTH_SERVICE,fallbackMethod="getMsDown")
+    @CircuitBreaker(name = "healthService",fallbackMethod = "getMsDown")
     public Health getOrderHealth() {
 
-        ResponseEntity<Health> orderHealth = new RestTemplate().getForEntity(PATH_URL_ORDER+"/actuator/health", Health.class);
-        Health orderResponse = orderHealth.getBody();
-
-        return orderResponse;
+        try{
+            ResponseEntity<Health> orderHealth = new RestTemplate().getForEntity(PATH_URL_ORDER+"/actuator/health", Health.class);
+            Health orderResponse = orderHealth.getBody();
+            return orderResponse;
+        }
+        catch (Exception e){
+            Health orderResponse = getMsDown();
+            return  orderResponse;
+        }
     }
 
     @GetMapping("/product")
-    @CircuitBreaker(name=HEALTH_SERVICE,fallbackMethod="getMsDown")
+    @CircuitBreaker(name = "healthService",fallbackMethod = "getMsDown")
     public Health getProductHealth() {
 
-        ResponseEntity<Health> productHealth = new RestTemplate().getForEntity(PATH_URL_PRODUCT+"/actuator/health", Health.class);
-        Health productResponse = productHealth.getBody();
-
-        return productResponse;
+        try{
+            ResponseEntity<Health> productHealth = new RestTemplate().getForEntity(PATH_URL_PRODUCT+"/actuator/health", Health.class);
+            Health productResponse = productHealth.getBody();
+            return productResponse;
+        }
+        catch (Exception e){
+            Health productResponse = getMsDown();
+            return productResponse;
+        }
     }
 
-    public Health getMsDown(){
+    public Health getMsDown(){ //RuntimeException runtimeException
 
         Health health = new Health();
 
