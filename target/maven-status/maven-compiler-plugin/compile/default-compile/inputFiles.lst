@@ -1,12 +1,12 @@
-/Users/anjabrelih/Documents/MM/FRI_Računalniške storitve v oblaku/projekt/health-service/src/main/java/com/rso40/healthservice/configuration/CircuitBreakerConfiguration.java
-/Users/anjabrelih/Documents/MM/FRI_Računalniške storitve v oblaku/projekt/health-service/src/main/java/com/rso40/healthservice/configuration/AsyncConfig.java
-/Users/anjabrelih/Documents/MM/FRI_Računalniške storitve v oblaku/projekt/health-service/src/main/java/com/rso40/healthservice/model/Components.java
-/Users/anjabrelih/Documents/MM/FRI_Računalniške storitve v oblaku/projekt/health-service/src/main/java/com/rso40/healthservice/model/HealthRepo.java
-/Users/anjabrelih/Documents/MM/FRI_Računalniške storitve v oblaku/projekt/health-service/src/main/java/com/rso40/healthservice/model/Details.java
-/Users/anjabrelih/Documents/MM/FRI_Računalniške storitve v oblaku/projekt/health-service/src/main/java/com/rso40/healthservice/service/HealthService.java
-/Users/anjabrelih/Documents/MM/FRI_Računalniške storitve v oblaku/projekt/health-service/src/main/java/com/rso40/healthservice/controller/HealthController.java
-/Users/anjabrelih/Documents/MM/FRI_Računalniške storitve v oblaku/projekt/health-service/src/main/java/com/rso40/healthservice/repository/HealthRepository.java
-/Users/anjabrelih/Documents/MM/FRI_Računalniške storitve v oblaku/projekt/health-service/src/main/java/com/rso40/healthservice/HealthServiceApplication.java
-/Users/anjabrelih/Documents/MM/FRI_Računalniške storitve v oblaku/projekt/health-service/src/main/java/com/rso40/healthservice/model/Health.java
-/Users/anjabrelih/Documents/MM/FRI_Računalniške storitve v oblaku/projekt/health-service/src/main/java/com/rso40/healthservice/model/Mongo.java
-/Users/anjabrelih/Documents/MM/FRI_Računalniške storitve v oblaku/projekt/health-service/src/main/java/com/rso40/healthservice/model/Ping.java
+C:\Users\miham\Documents\GitHub\MM-AB\health-service\src\main\java\com\rso40\healthservice\model\HealthRepo.java
+C:\Users\miham\Documents\GitHub\MM-AB\health-service\src\main\java\com\rso40\healthservice\service\HealthService.java
+C:\Users\miham\Documents\GitHub\MM-AB\health-service\src\main\java\com\rso40\healthservice\configuration\AsyncConfig.java
+C:\Users\miham\Documents\GitHub\MM-AB\health-service\src\main\java\com\rso40\healthservice\HealthServiceApplication.java
+C:\Users\miham\Documents\GitHub\MM-AB\health-service\src\main\java\com\rso40\healthservice\model\Components.java
+C:\Users\miham\Documents\GitHub\MM-AB\health-service\src\main\java\com\rso40\healthservice\model\Health.java
+C:\Users\miham\Documents\GitHub\MM-AB\health-service\src\main\java\com\rso40\healthservice\model\Ping.java
+C:\Users\miham\Documents\GitHub\MM-AB\health-service\src\main\java\com\rso40\healthservice\model\Details.java
+C:\Users\miham\Documents\GitHub\MM-AB\health-service\src\main\java\com\rso40\healthservice\configuration\CircuitBreakerConfiguration.java
+C:\Users\miham\Documents\GitHub\MM-AB\health-service\src\main\java\com\rso40\healthservice\model\Mongo.java
+C:\Users\miham\Documents\GitHub\MM-AB\health-service\src\main\java\com\rso40\healthservice\controller\HealthController.java
+C:\Users\miham\Documents\GitHub\MM-AB\health-service\src\main\java\com\rso40\healthservice\repository\HealthRepository.java

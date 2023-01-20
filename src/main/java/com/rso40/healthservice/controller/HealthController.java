@@ -24,10 +24,10 @@ public class HealthController {
     private HealthService healthService;
 
     public static final String HEALTH_SERVICE="healthService";
-    private static final String PATH_URL_ADMIN = "http://localhost:8080"; //http://localhost:8080 //http://20.120.124.86/admin
-    private static final String PATH_URL_USER = "http://localhost:8081"; //http://localhost:8081 //http://20.120.124.86/user
-    private static final String PATH_URL_ORDER = "http://localhost:8082"; //http://localhost:8082 //http://20.120.124.86/order
-    private static final String PATH_URL_PRODUCT = "http://localhost:8083"; //http://localhost:8083 //http://20.120.124.86/product
+    private static final String PATH_URL_ADMIN = "http://20.120.124.86/admin"; //http://localhost:8080 //http://20.120.124.86/admin
+    private static final String PATH_URL_USER = "http://20.120.124.86/user"; //http://localhost:8081 //http://20.120.124.86/user
+    private static final String PATH_URL_ORDER = "http://20.120.124.86/order"; //http://localhost:8082 //http://20.120.124.86/order
+    private static final String PATH_URL_PRODUCT = "http://20.120.124.86/product"; //http://localhost:8083 //http://20.120.124.86/product
 
     @GetMapping("")
     @ResponseStatus(HttpStatus.OK)
